@@ -1,0 +1,109 @@
+@import './remcss.less';
+
+@theme-color: #ff8200;
+@light-theme: #fff5ec;
+@dark-gray: #707c93;
+@light-gray: #b5c1d2;
+@bg-gray: #f9fafe;
+@dark-black: #242841;
+@line: #e5e5e5;
+@black: #242841;
+@dark-green: #43c177;
+
+.flex-style(@direction, @justify, @align) {
+  display: flex;
+  flex-direction: @direction;
+  justify-content: @justify;
+  align-items: @align;
+}
+
+
+* {
+  font-family: DroidSansFallback;
+}
+
+.divider-line {
+  display: inline-block;
+  content: '|';
+  text-align: center;
+  .px2rem(width, 58);
+}
+
+.divider-item(@width, @fontSize) {
+  display: inline-block;
+  content: '|';
+  text-align: center;
+  width: @width;
+  font-size: @fontSize;
+}
+
+.common-wrap {
+  width: 100%;
+  background-color: #fff;
+  box-sizing: border-box;
+  .px2rem(padding-left, 60);
+  .px2rem(padding-right, 60);
+}
+
+.bottom-one-px {
+   box-shadow: 0 -1px 1px -1px @line inset;
+}
+
+.left-one-px {
+   box-shadow: 1px 0 1px -1px @light-gray inset;
+}
+
+.btn-one-px(@width, @height, @borderColor, @bgColor, @borderRadius) {
+  position: relative;
+  .px2rem(width, @width);
+  .px2rem(height, @height);
+  .px2rem(line-height, @height);
+  // line-height: normal;
+  .flex-style(row, center, center);
+  background-color: @bgColor;
+  .px2rem(font-size, 39);
+  color: @borderColor;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 200%;
+    border: 1px solid @borderColor;
+    .px2rem(border-radius, @borderRadius*2);
+    color: @borderColor;
+    height: 200%;
+    transform-origin: left top;
+    transform: scale(0.5);
+    pointer-events: none;
+    /* 防止点击触发 */
+    box-sizing: border-box;
+  }
+}
+
+.green {
+  color: #43c177;
+}
+
+.gray {
+  color: @light-gray;
+}
+
+.orange {
+  color: @theme-color;
+}
+.red {
+  color: #ff5050;
+}
+
+.jump-icon {
+  .px2rem(font-size, 27);
+  .px2rem(margin-left, 20);
+  color: @light-gray;
+}
+.top-shadow {
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, .1);
+  margin-bottom: 6px;
+}

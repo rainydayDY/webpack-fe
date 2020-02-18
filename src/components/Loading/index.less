@@ -1,0 +1,50 @@
+@import '../../common/less/remcss.less';
+
+.m-loading {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9900;
+  height: 100%;
+  width: 100%;
+
+  &.on {
+    display: block;
+  }
+
+  .loading-content{
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    padding: 15px 20px;
+    .px2rem(width, 360);
+    .px2rem(height, 186);
+    .px2rem(border-radius, 9);
+
+    .loading-icon{
+      .px2rem(width, 120);
+      .px2rem(height, 120);
+      animation: spin 2s linear infinite;
+    }
+
+    p {
+      .px2rem(margin-top, 90);
+      .px2rem(font-size, 39);
+      color: #707C93;
+    }
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
