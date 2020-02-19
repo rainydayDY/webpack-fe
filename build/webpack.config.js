@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 
 function resolve(dir) {
@@ -33,7 +34,7 @@ module.exports = {
         rules: [
             {
                 test: /\.less?$/,
-                use: [MiniCssExtractPlugin.loader, 'css-loader', 'less-loader']
+                use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'less-loader']
             },
             {
                 test: /\.(js|jsx)$/,
@@ -76,9 +77,13 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: 'index.html', // 配置输出文件名
             template: src('index.html'),
+            favicon: src('favicon.ico'),
         }),
         new MiniCssExtractPlugin({
             filename: "static/css/[name].css"
         }),
+        new CopyPlugin([
+            { from: src('/common/libs/flexible.js'), to: resolve('dist') },
+		]),
     ]
 }

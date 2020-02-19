@@ -6,7 +6,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import NotFound from '../NotFound';
+// import NotFound from '../NotFound';
 // import Raven from 'raven-js';
 
 export default class ErrorBoundary extends React.Component {
@@ -36,7 +36,8 @@ export default class ErrorBoundary extends React.Component {
     render() {
         if (this.state.hasError) {
             // You can render any custom fallback UI
-            return <NotFound content="页面出错了"/>;
+            // return <NotFound content="页面出错了"/>;
+            return <div>页面出错了</div>;
         }
     
         return this.props.children; 

@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import { connect } from 'react-redux';
-// import mapToProps from './mapping';
+import { connect } from 'react-redux';
+import mapToProps from './mapping';
 import device from 'utils/device';
 import classNames from 'classnames';
 import SvgIcon from 'components/SvgIcon';
 import './index.less';
 
-// @connect(null, mapToProps.mapDispatchToProps)
+@connect(null, mapToProps.mapDispatchToProps)
 export default class GlobalHeader extends React.Component {
 
     static propTypes = {
