@@ -2,7 +2,7 @@ var base = require('./webpack.config');
 var webpack = require('webpack');　
 
 base.mode = "development";
-base.devtool = 'source-map';
+base.devtool = 'cheap-eval-source-map';
 base.plugins.push(
     new webpack.HotModuleReplacementPlugin(),
 );

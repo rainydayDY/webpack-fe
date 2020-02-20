@@ -17,7 +17,10 @@ module.exports = {
         main: src('index.jsx'),
     },
     output: {
-        filename: '[name].js',
+        path: resolve('dist'),
+        filename: 'static/js/[name].js',
+        chunkFilename: 'static/js/[name].js',
+        publicPath: '/'
     },
     resolve: {
         alias: {
