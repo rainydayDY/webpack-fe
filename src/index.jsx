@@ -17,7 +17,7 @@ ReactDom.render(
     document.getElementById("root")
 );
 
-// ReactDom.render(
-//     <Layout />,
-//     document.getElementById("root")
-// );
+// 接收热更新输出，只有accept才能被更新
+if (module.hot) {
+    module.hot.accept();
+  }
