@@ -41,9 +41,9 @@ module.exports = {
             },
             {
                 test: /\.(js|jsx)$/,
-                loader: 'babel-loader',
                 exclude: /node_modules/,
                 include: resolve(''),
+                use: ['react-hot-loader/webpack', 'babel-loader'],
             },
             {
                 test: /\.(png|jpg|gif)$/i,

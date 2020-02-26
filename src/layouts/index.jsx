@@ -1,4 +1,5 @@
 import React, { Suspense, Fragment } from 'react';
+import { hot } from 'react-hot-loader/root';
 import GlobalHeader from 'components/GlobalHeader';
 import Loading from 'components/Loading';
 import ErrorBoundary from 'components/ErrorBoundary';
@@ -7,6 +8,7 @@ import PropTypes from 'prop-types';
 import routeConfig from '../router';
 import device from 'utils/device';
 
+@hot
 @withRouter
 export default class Layout extends React.Component {
 
